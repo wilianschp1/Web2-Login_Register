@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IniciarSesion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+    body, html {
+        height: 100%;
+    }
+
+    .container-fluid {
+        height: 100%;
+    }
+
+    .row {
+        height: 100%;
+    }
+
+    .login-side {
+        position: relative;
+    }
+
+        .login-side video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    .login-form-side {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #003d99;
+        padding: 0 30px; 
+    }
+    .login-form-side .form-control, .login-form-side .btn {
+        width: 100%;
+    }
+
+    .form-control:focus {
+        border-color: #7367F0;
+        box-shadow: none;
+    }
+
+    .btn-primary {
+        background-color: #7367F0;
+        border: none;
+    }
+
+    h3.text-center {
+        margin-bottom: 20px;
+    }
+
+    .login-image {
+        width: 80px;
+        height: auto; 
+        margin-bottom: 20px; 
+        display: block; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <div class="col-md-8 login-side">
+                <video autoplay muted loop>
+                    <source src="/Multi_Login/HotelVideo2.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="col-md-4 login-form-side">
+                <img src="/Multi_Login/IconLogin.png" alt="Login" class="login-image">
+                <h3 style="color:white;font-family:Cambria" class="text-center mb-4">Bienvenido</h3>
+                <form asp-controller="Inicio" asp-action="IniciarSesion" method="post">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="correo" name="correo" placeholder="Correo electrónico" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control" id="clave" name="clave" placeholder="Contraseña" required>
+                    </div>
+                    <div class="d-flex justify-content-center mb-3">
+                        <button type="submit" class="btn btn-warning" style="width: 50%;"><b>Ingresar</b></button>
+                    </div>
+                    <div class="mb-3 d-flex justify-content-between">
+                        <a style="color:black" href="https://i1.sndcdn.com/artworks-BbFoT78lGkUVQz5t-j6Vjfg-t500x500.jpg" target="_blank" class="text-muted">¿Olvidaste tu Contraseña?</a>
+                    </div>
+                    <div style="color:white" class="text-center mt-2">
+                        ¿No tienes una cuenta? <a style="color:black;text-decoration:none" href="register.html"><b>Registrarse</b></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
